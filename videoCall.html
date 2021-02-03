@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CommonDoodle</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ec2623f3c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+    <div class="flexContainer">
+        <div class="left-pane">
+            <div class="loginChannel">
+                <div id="headingText">
+                    <span>
+                        Join a CommonDoodle!
+                    </span>
+                </div>
+
+                <input type="text" id="username" placeholder="Username" value="YourName">
+                <input type="text" id="channelName" placeholder="ChannelName" value="Channel">
+                <button class="submitButton" id="join">Join</button>
+            </div>
+            <hr>
+            <!-- <div id="participants">
+                <span>Participants:</span>
+                <div id="namesList">
+                    <div id="nameDiv"></div>
+                </div>
+            </div> -->
+        </div>
+        <div class="right-container">
+            <div id="right-pane">
+
+                <div id="SelfStream"></div>
+
+                <div id="vcButtons" style="font-size: 3rem; color: white; ">
+                    <div id="audio-mute">
+                        <i onclick="muteAudio(this)" class="fas fa-microphone"></i>
+                    </div>
+                    <div id="video-mute">
+                        <i onclick="muteVid(this)" class="fas fa-video"></i>
+                    </div>
+                </div>
+                <div id="remoteStream"></div>
+            </div>
+            <div id="canvasPlaceholder">
+                <p>
+                    <select name="selector" id="selector">
+                        <option value="chalk">Draw</option>
+                        <option value="eraser">Erase</option>
+                    </select>
+                    <button type="button" id="btnDownload">Share Doodle!</button>
+                </p>
+                
+                <canvas id="drawingCanvas" height="532" width="700">
+                </canvas>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        const btnDownload = document.querySelector("#btnDownload");
+        const canvas = document.querySelector("#drawingCanvas");
+        btnDownload.addEventListener("click",function() {
+            if (window.navigator.msSaveBlob) {
+                window.navigator.msSaveBlob(canvas.msToBlob(), "commondoodle.png");
+            }
+            else {
+                const a = document.createElement("a");
+
+                document.body.appendChild(a);
+                a.href = canvas.toDataURL();
+                a.download = "commondoodle.png";
+                a.click();
+                document.body.removeChild(a);
+
+            }
+
+        });
+        function muteAudio(x) {
+            x.classList.toggle("fa-microphone-slash");
+        }
+        function muteVid(x) {
+            x.classList.toggle("fa-video-slash");
+        }
+
+    </script>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
+    <script src="agoraRtc.js"></script>
+</body>
+
+</html>

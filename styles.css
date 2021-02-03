@@ -1,0 +1,181 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #123053;
+    /* background-color: #86AABF; */
+    background: url("assets/CommonDoodleBG.gif") no-repeat center fixed;
+    background-size: cover;
+
+    
+}
+
+hr {
+    margin: 30px;
+}
+#flexContainer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+img{
+    width: 100%;
+}
+
+#bottomWave {
+    transform:rotate(180deg);
+    position: absolute;
+    bottom: 0;
+}
+
+#canvas {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    cursor:crosshair;
+}
+
+#topTexts {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#titleText{
+    color: #F0B823;
+    font-size: 4rem;
+    text-shadow: -3px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#subtitleText{
+    color: white;
+    font-size: 2rem;
+    text-shadow: -3px 0 #F0B823, 0 1px #F0B823, 1px 0 #F0B823, 0 -1px #F0B823;
+}
+
+#email{
+    margin-top: 30px;
+}
+
+input{
+    margin-top: 20px;
+    padding: 5px;
+    width: 90%;
+    font-size: 1rem;
+    border: 1px solid  white;
+    border-style: inset;
+}
+.submitButton{
+    background-color: white;
+    border: none;
+    opacity: 0.7;
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    font-size: 1.5rem;
+}
+
+.incorrect{
+    border: 2px solid red;
+}
+
+/* Video Call */
+
+
+.left-pane{
+    background-color: #123053;
+    width: auto;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    color: #F0B823;
+    font-size: 2rem;
+}
+
+
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.right-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+
+#right-pane{
+    padding-right: 10px;
+}
+
+#SelfStream{
+    justify-self: center;
+    width: 400px;
+    height: 250px;
+    border: 10px solid #123053;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#remoteStream{
+    text-align: left;
+    justify-self: center;
+    width: 400px;
+    height: 250px;
+    border: 10px solid #123053;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#participants {
+    margin-top: 20px;
+}
+
+#namesList{
+    text-align: left;
+    margin-top: 20px;
+    justify-self: center;   
+    height: 100px;
+    width: 100%; 
+}
+
+
+#vcButtons {
+    display: flex;
+    flex-direction: row;
+    background-color: #123053;
+    padding: 0px 15px 15px 15px;
+    justify-content: center;
+    letter-spacing: 30px;
+}
+
+/* Canvas */
+
+#canvasPlaceholder {
+    width: 700px;
+    height: 600px;
+    background-color: #F0B823;
+    border-radius: 10px;
+    cursor: crosshair;
+    
+}
+#drawingCanvas { 
+    position:absolute; 
+    border:none; 
+    color:#FFF; 
+    overflow:hidden; 
+    background-color:transparent; 
+    } 
+
+#tempCanvas { 
+    position: absolute; width:700px; height:532px; overflow:hidden; 
+}
+   
